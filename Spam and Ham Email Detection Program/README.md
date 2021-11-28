@@ -1,4 +1,4 @@
-# Reversi in Java
+# Spam and Ham Email Detection
 
 
 **Objective**:  
