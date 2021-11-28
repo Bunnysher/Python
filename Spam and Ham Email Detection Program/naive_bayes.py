@@ -1,21 +1,20 @@
-# Author: Stergina
-
 # Import Libraries
 import os
 import collections
 import numpy
+from functools import reduce
 
 # Imports weather data--------------------------------------------------------------------------------------------------------
 
 # Setting the data folder
-data = "C:\\Users\\Stergina\\Projects\\Python\\NaiveBayes"
+data = "C:/data/lingspam_public"
 files = os.listdir(data)
 
-# Promts user to choose one of the data folders
-choice = raw_input("Dataset Options:\nbare = 1\nlemm = 2\nlemm_stop = 3\nstop = 4\n\nYour choice: ")
+# Prompts user to choose one of the data folders
+choice = input("Dataset Options:\nbare = 1\nlemm = 2\nlemm_stop = 3\nstop = 4\n\nYour choice: ")
  
 # Promts user to choose if we should use Term Frequency-Inverse Document Frequency
-IDF_option = raw_input("\nIDF Options:\nYes = 1\nNo = 2\n\nYour choice: ")
+IDF_option = input("\nIDF Options:\nYes = 1\nNo = 2\n\nYour choice: ")
 
 # Convert string to int type
 choice = int(choice)
@@ -31,7 +30,7 @@ elif choice == 3:
 elif choice == 4:
     subf = data + '\\stop\\'
 else:
-    print 'Invalid number. Try again..!'
+    print('Invalid number. Try again..!')
 
 # Chosen training and testing data's path
 train_dir = subf + 'train\\'
@@ -141,8 +140,8 @@ for i in range(0, test_count):
         elif bayes > 0 and 'spmsga' not in test_files[i]:
             false_pos += 1
         else:
-            print 'Something went wrong!'
+            print('Something went wrong!')
 
 # Prints the correct percentage
 perc = round(float(true_neg + true_pos) / float(test_count), 2)
-print 'Correct % :', perc
+print('Correct % :', perc)
